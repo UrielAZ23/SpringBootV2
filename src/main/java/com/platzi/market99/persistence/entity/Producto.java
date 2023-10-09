@@ -19,7 +19,7 @@ public class Producto {
     @Column(name="codigo_barras")
     private String codigoBarras;
 
-    @Column(name="precio_columna")
+    @Column(name="precio_venta")
     private Double precioVenta;
 
     @Column(name = "cantidad_stock")
@@ -30,6 +30,14 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_categoria",insertable = false,updatable = false)
     private Categoria categoria;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Integer getIdProducto() {
         return idProducto;
